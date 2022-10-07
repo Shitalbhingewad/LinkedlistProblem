@@ -1,6 +1,10 @@
 package com.LinkedListProblem;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Linkedlist {
+    private static final Logger logger = LogManager.getLogger(App.class);
     Node head;
 
     void insertAtStart(int data) {
@@ -53,10 +57,10 @@ public class Linkedlist {
     void showLinkedList() {
         Node temp = head;
         while (temp.next != null) {
-            System.out.println(temp.data);
+            logger.info(temp.data);
             temp = temp.next;
         }
-        System.out.println(temp.data);
+        logger.info(temp.data);
     }
 
     void deleteNode(int index) {
@@ -64,7 +68,7 @@ public class Linkedlist {
         Node temp;
         temp = head;
         if (head == null) {
-            System.out.println("NO list exists!!");
+            logger.info("NO list exists!!");
         } else {
 
             for (int i = 0; i < index - 1; i++) {
@@ -85,18 +89,18 @@ public class Linkedlist {
 
     }
 
-  void searchNodeWithKey(int data) {
+    void searchNodeWithKey(int data) {
         Node node = new Node();
         node.data = data;
         node.next = null;
         if (head == null) {
-            System.out.println("Linked list empty!!");
+            logger.info("Linked list empty!!");
         } else {
             Node temp;
             temp = head;
             while (temp != null) {
                 if (temp.data == node.data) {
-                    System.out.println("Node Found " + node.data);
+                    logger.info("Node Found " + node.data);
                     break;
                 } else {
                     temp = temp.next;
@@ -104,5 +108,22 @@ public class Linkedlist {
             }
 
         }
+    }
+
+    void sizeOfLinkedList() {
+        Node temp;
+        temp = head;
+        int count = 0;
+        if (head == null) {
+            logger.info("List is empty!");
+        } else {
+            while (temp.next != null) {
+                temp = temp.next;
+                count++;
+            }
+            count++;
+            logger.info("Size of Linked list is " + count);
+        }
+
     }
 }
