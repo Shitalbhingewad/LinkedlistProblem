@@ -84,4 +84,25 @@ public class Linkedlist {
         }
 
     }
+
+  void searchNodeWithKey(int data) {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+        if (head == null) {
+            System.out.println("Linked list empty!!");
+        } else {
+            Node temp;
+            temp = head;
+            while (temp != null) {
+                if (temp.data == node.data) {
+                    System.out.println("Node Found " + node.data);
+                    break;
+                } else {
+                    temp = temp.next;
+                }
+            }
+
+        }
+    }
 }
