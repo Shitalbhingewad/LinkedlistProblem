@@ -7,7 +7,12 @@ public class App {
 	private static final Logger logger =LogManager.getLogger(App.class);
     public static void main( String[] args ){
         logger.info( "Welcome to LinkedList Problems" );
-       
+        Linkedlist list = new Linkedlist();
+        list.insertNode(56);
+        list.insertNode(30);
+        list.insertNode(70);
+        list.showLinkedList();
+    }
     }
     
-}
+
