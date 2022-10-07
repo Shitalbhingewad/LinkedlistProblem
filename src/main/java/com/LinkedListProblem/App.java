@@ -8,11 +8,14 @@ public class App {
     public static void main( String[] args ){
         logger.info( "Welcome to LinkedList Problems" );
         Linkedlist list = new Linkedlist();
-        list.insertNode(56);
-        list.insertNode(30);
-        list.insertNode(70);
+        // list.insertNode(56);
+        // list.insertNode(30);
+        // list.insertNode(70);
+        list.insertAtStart(70);
+        list.insertAtStart(30);
+        list.insertAtStart(56);
         list.showLinkedList();
-    }
+       
     }
     
-
+}

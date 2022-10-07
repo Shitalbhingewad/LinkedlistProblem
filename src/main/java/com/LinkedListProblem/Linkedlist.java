@@ -3,6 +3,20 @@ package com.LinkedListProblem;
 public class Linkedlist {
     Node head;
 
+  void insertAtStart(int data) {
+        Node node = new Node();
+        node.data = data;
+        node.next = null;
+        if (head == null) {
+            head = node;
+        } else {
+            Node temp;
+            temp = head;
+            head = node;
+            head.next = temp;
+        }
+    }
+
     void insertNode(int data) {
         Node node = new Node();
         node.data = data;
@@ -28,5 +42,5 @@ public class Linkedlist {
         System.out.println(temp.data);
 
     }
-}
 
+}
